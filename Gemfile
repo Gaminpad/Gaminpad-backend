@@ -37,9 +37,11 @@ gem 'unicorn'
 
 # Custom
 gem 'activeadmin'
+gem 'devise'
 
 group :development, :test do
-	gem 'sqlite3'
+	gem 'sqlite3', '~> 1.3.5'
+	gem "debugger"
 end
 
 group :staging, :production do
