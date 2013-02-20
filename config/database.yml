@@ -23,7 +23,7 @@ staging:
   adapter: postgresql
   encoding: unicode
   template: template0
-  database: gaminpad_production
+  database: gaminpad_staging
   pool: 5
 
 
