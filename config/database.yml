@@ -18,8 +18,18 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+# Heroku
+staging:
+  adapter: postgresql
+  encoding: unicode
+  template: template0
+  database: gaminpad_production
   pool: 5
-  timeout: 5000
+
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  template: template0
+  database: gaminpad_production
+  pool: 5
