@@ -22,7 +22,6 @@ test:
 staging:
   adapter: postgresql
   encoding: unicode
-  template: template0
   database: gaminpad_staging
   pool: 5
 
@@ -30,6 +29,5 @@ staging:
 production:
   adapter: postgresql
   encoding: unicode
-  template: template0
   database: gaminpad_production
   pool: 5
