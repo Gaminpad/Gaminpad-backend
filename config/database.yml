@@ -24,10 +24,13 @@ staging:
   encoding: unicode
   database: gaminpad_staging
   pool: 5
-
+  username:
+  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: gaminpad_production
   pool: 5
+  username:
+  password:
