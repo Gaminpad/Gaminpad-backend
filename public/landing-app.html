@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GaminPad - Gaming Backend as a Service</title>
+    <title><%= @app.name %> - Powered by GaminPad</title>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
     <style type="text/css" media="screen">
       body {
         margin: 0;
@@ -9,13 +10,8 @@
         padding: 0;
         background-color: #f0f0f0;
         font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
+        font-size: 16px;
         color: #333;
-      }
-
-      h1 {
-        font-size: 28px;
-        color: #000;
       }
 
       a  {color: #03c}
@@ -50,20 +46,27 @@
 
       #footer {
         clear: both;
+        text-align: center;
       }
+
+    
 
       #header, #about, #getting-started {
         padding-left: 75px;
         padding-right: 30px;
       }
 
-
       #header {
-        background-image: url("assets/logo-gaminpad-whitebg-500.png");
-        background-repeat: no-repeat;
-        background-position: top center;
-        height: 200px;
+        height: 100px;
       }
+
+      #header h1 {
+        font-family: 'Lobster', arial, serif;
+        font-size: 58px;
+        color: #000;
+        text-align: center;
+      }
+
       #header h1, #header h2 {margin: 0}
       #header h2 {
         color: #888;
@@ -171,28 +174,14 @@
         font-style: italic;
       }
     </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
   </head>
   <body>
     <div id="page">
       <div id="sidebar">
         <ul id="sidebar-items">
           <li>
-            <h3>Browse the documentation</h3>
+            <h3>App Docs</h3>
             <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
               <li><a href="http://apiary.io/blueprint/">API Blueprint Spec</a></li>
             </ul>
           </li>
@@ -201,29 +190,10 @@
 
       <div id="content">
         <div id="header">
+          <h1><%= @app.name %></h1>
         </div>
-        <div id="getting-started">
-          <h1>Gaming Backend as a Service</h1>
-          <ol>
-            <li>
-              <h2>Clouded backend for your multiplayer game</h2>
-              <p>No setup, no platform maintenance, no sys-admin.</p>
-            </li>
-
-            <li>
-              <h2>Basic behaviour built-in plus extended data models and controllers <span class="filename">(Players, Games...)</span></h2>
-              <p>Use <span class="filename">Ruby-inside Script</span> to add new data models and extend your custom API funcionality.</p>
-            </li>
-
-            <li>
-              <h2>Automated API docs and interface</h2>
-              <p>Based on <code>Blueprint</code> automated documentation with continued integration testing.</p>
-            </li>
-          </ol>
-        </div>
+        <div id="footer">Powered by <a href="http://gaminpad.com">GaminPad</a></div>
       </div>
-
-      <div id="footer">&nbsp;</div>
     </div>
   </body>
 </html>
