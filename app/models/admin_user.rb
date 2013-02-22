@@ -11,6 +11,4 @@ class AdminUser < ActiveRecord::Base
 
   has_many :apps
 
-  validates_presence_of :admin_user
-
 end
