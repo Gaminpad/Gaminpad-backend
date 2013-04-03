@@ -4,8 +4,7 @@ class AppsController < ApplicationController
 	
 
 	def show
-		#render :text => "App found! Status: #{@app.status.to_s}"
-		render :file => 'public/landing-app' 
+		render :file => 'public/landing-app', :layout => false
 	end
 
 	def api
