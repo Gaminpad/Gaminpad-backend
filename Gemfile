@@ -39,6 +39,10 @@ gem 'unicorn'
 gem 'activeadmin'
 gem 'devise'
 
+group :development do
+  gem "better_errors"
+end
+
 group :development, :test do
 	gem 'sqlite3', '~> 1.3.5'
 	gem "debugger"
