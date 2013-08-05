@@ -4,7 +4,11 @@ Gaminpad::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match '/' => 'apps#show', :constraints => { :subdomain => /.+/ }
-  match '/api/' => 'apps#api', :constraints => { :subdomain => /.+/ }
+  #match '/api/' => 'apps#api', :constraints => { :subdomain => /.+/ }
+  
+  constraints :subdomain => /.+/ do
+    mount GaminpadBase::API => '/api'
+  end
 
   root :to => 'application#index'
 

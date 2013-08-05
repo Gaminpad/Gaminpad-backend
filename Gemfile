@@ -38,6 +38,7 @@ gem 'unicorn'
 # Custom
 gem 'activeadmin'
 gem 'devise'
+gem 'grape'
 
 group :development do
   gem "better_errors"
