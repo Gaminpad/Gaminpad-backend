@@ -179,8 +179,16 @@
           <li>
             <h3>Browse the documentation</h3>
             <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://apiary.io/blueprint/">API Blueprint Spec</a></li>
+              <li><a href="http://apiary.io/blueprint/">API Blueprint Specs</a></li>
+							<li><a href="http://apiary.io/gaminpad/">Gaminpad base API</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3>Latest Apps</h3>
+            <ul class="links">
+							<% App.all(:limit => 10).each do |app| %>
+              	<li><%= link_to app.name, url_for(:host => app.url_slug + '.' + request.host) %></a></li>
+							<% end %>
             </ul>
           </li>
         </ul>
