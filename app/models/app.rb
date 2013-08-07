@@ -2,6 +2,7 @@ class App < ActiveRecord::Base
   # attr_accessible :title, :body
 
   belongs_to :admin_user
+  has_many :games
 
   validates :admin_user, :presence => true
   validates :name, :presence => true

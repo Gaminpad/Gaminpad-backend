@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   APP_SLUG_NOT_VALID = 'App not found. Check URL, please'
 
   def index
+    @apps = App.all(:order => 'created_at DESC', :limit => 10)
   	render :file => 'public/landing-gaminpad'
   end
 

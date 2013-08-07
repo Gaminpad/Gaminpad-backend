@@ -186,7 +186,7 @@
           <li>
             <h3>Latest Apps</h3>
             <ul class="links">
-							<% App.all(:limit => 10).each do |app| %>
+							<% @apps.each do |app| %>
               	<li><%= link_to app.name, url_for(:host => app.url_slug + '.' + request.host) %></a></li>
 							<% end %>
             </ul>

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem 'rake', '10.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -41,7 +42,7 @@ gem 'devise'
 gem 'grape'
 
 group :development do
-  gem "better_errors"
+  #gem "better_errors"
 end
 
 group :development, :test do
