@@ -18,6 +18,21 @@ class Player < ActiveRecord::Base
   
   #before_create :ensure_authentication_token
   
+  def update_tracked_fields!(request) #Overwritten from devise
+    old_current, new_current = self.current_sign_in_at, Time.now.utc
+    self.last_sign_in_at     = old_current || new_current
+    self.current_sign_in_at  = new_current
+
+    old_current, new_current = self.current_sign_in_ip, request.ip
+    self.last_sign_in_ip     = old_current || new_current
+    self.current_sign_in_ip  = new_current
+
+    self.sign_in_count ||= 0
+    self.sign_in_count += 1
+    save(:validate => false) or raise "Unable to save trackable info: #{inspect}." \
+        "Please make sure a model using trackable can be saved at sign in."
+  end
+  
   def self.token_authorize(token)
     self.find_by_authentication_token(token)
   end
@@ -25,6 +40,7 @@ class Player < ActiveRecord::Base
   def self.authenticate_with_email(email, password)
     user = self.find_by_email(email.downcase)
     if user && user.valid_password?(password)
+      user.reset_authentication_token!
       return user
     else
       nil
@@ -34,11 +50,11 @@ class Player < ActiveRecord::Base
   def self.authenticate_with_username(username, password)
     user = self.find_by_username(username)
     if user && user.valid_password?(password)
+      reset_authentication_token!
       return user
     else
       nil
     end
   end
-  
   
 end
