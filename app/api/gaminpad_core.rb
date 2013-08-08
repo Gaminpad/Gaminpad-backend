@@ -11,7 +11,6 @@ module GaminpadCore
     
     helpers do
       def valid_app_slug
-        puts "DEBUG :: request -> #{request.inspect}"
         @slug = request.host.split('.').first
         @app = App.find_by_url_slug(@slug)
         error!("Invalid App Slug: #{@slug}", 400) if @app.nil?
