@@ -38,4 +38,4 @@ ActiveAdmin.register App do
   end
 
 
-end                                   
+end
