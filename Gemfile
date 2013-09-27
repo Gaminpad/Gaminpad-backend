@@ -39,7 +39,11 @@ gem 'unicorn'
 # Custom
 gem 'activeadmin'
 gem 'devise'
+gem "role_model"
+
+#Grapes
 gem 'grape'
+gem 'grape-entity'
 
 group :development do
   #gem "better_errors"

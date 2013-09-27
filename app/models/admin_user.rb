@@ -10,5 +10,10 @@ class AdminUser < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :apps
+  
+  include RoleModel
+  roles_attribute :roles_mask
+  roles :admin, :owner, :developer
+  
 
 end

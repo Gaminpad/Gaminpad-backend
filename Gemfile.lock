@@ -86,6 +86,9 @@ GEM
       rack-accept
       rack-mount
       virtus
+    grape-entity (0.3.0)
+      activesupport
+      multi_json (>= 1.3.2)
     has_scope (0.5.1)
     hashie (2.0.5)
     hike (1.2.1)
@@ -153,6 +156,7 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
+    role_model (0.8.1)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -192,11 +196,13 @@ DEPENDENCIES
   debugger
   devise
   grape
+  grape-entity
   jbuilder
   jquery-rails
   pg
   rails (= 3.2.12)
   rake (= 10.1.0)
+  role_model
   sass-rails (~> 3.2.3)
   sqlite3 (~> 1.3.5)
   uglifier (>= 1.0.3)

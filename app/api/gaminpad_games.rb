@@ -1,20 +1,18 @@
+include GaminpadGamesEntities
+
 module GaminpadGames
 
   def self.included(base)
     base.class_eval do
+      
+      helpers GaminpadGamesHelpers
     
-      #helpers
-      helpers do
-      end
-
       resource :games do
-        desc 'Check token validity.'
+        desc 'List players games'
         get '/' do
-          authenticate!
-          {
-            authorized: 'ok',
-            user: nil
-          }
+          verify_token
+          @games = current_player.games
+          present @games, with: GaminpadGamesEntities::GameEntity
         end
       end
 

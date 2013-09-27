@@ -2,8 +2,7 @@ module GaminpadAuth
 
   def self.included(base)
     base.class_eval do
-      
-      #helpers
+
       helpers do
         def current_player
           current_player ||= Player.token_authorize(headers['Authorization-Token'])
@@ -45,7 +44,6 @@ module GaminpadAuth
         get '/' do
           verify_token
           {
-            authorized: 'ok',
             player: current_player
           }
         end
