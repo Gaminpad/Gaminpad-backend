@@ -1,5 +1,5 @@
 == Gaminpad
 
-{<img src="https://codeclimate.com/repos/51ff201189af7e1bc0047b4e/badges/3473a2e53d5a60508e2e/gpa.png" />}[https://codeclimate.com/repos/51ff201189af7e1bc0047b4e/feed]
+{<img src="https://codeclimate.com/github/Gaminpad/Gaminpad-backend.png" />}[https://codeclimate.com/github/Gaminpad/Gaminpad-backend]
 
 Gaminpad is a Backend as a Service platform for Game developers.
