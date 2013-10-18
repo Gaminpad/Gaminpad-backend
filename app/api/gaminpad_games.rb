@@ -1,3 +1,6 @@
+GP_MODULE_PATH = File.expand_path('..', __FILE__)
+
+# require "#{GP_MODULE_PATH}/gaminpad_games_entities"
 include GaminpadGamesEntities
 
 module GaminpadGames
