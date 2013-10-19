@@ -19,8 +19,8 @@ ActiveAdmin.register App do
 			f.input :url_slug
 			f.input :status, label: "Status", as: :radio,
         collection: [:active, :private, :disabled]
-		end                               
-		f.actions                         
+		end
+		f.actions
 	end
 
   controller do
