@@ -1,3 +1,5 @@
+include GaminpadAuthEntities
+
 module GaminpadAuth
 
   def self.included(base)

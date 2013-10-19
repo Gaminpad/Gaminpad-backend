@@ -5,6 +5,7 @@ module GaminpadGamesEntities
     expose :title
     expose :status
     expose :last_played
+    expose :players, :using => PlayerEntity
   end
   
 end
