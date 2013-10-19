@@ -46,7 +46,7 @@ gem 'grape'
 gem 'grape-entity'
 
 group :development do
-  #gem "better_errors"
+  gem "better_errors"
 end
 
 group :development, :test do
