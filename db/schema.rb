@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20130805213254) do
   add_index "game_joins", ["player_id"], :name => "index_game_joins_on_player_id"
 
   create_table "games", :force => true do |t|
-    t.integer  "player_id"
+    t.integer  "owner_id"
     t.string   "title",       :limit => 50
     t.string   "status",      :limit => 10
     t.datetime "last_played"

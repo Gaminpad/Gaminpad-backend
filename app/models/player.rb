@@ -4,7 +4,7 @@ class Player < ActiveRecord::Base
          :rememberable, :trackable, :validatable, :lockable
 
   has_and_belongs_to_many :games, :join_table => :game_joins
-  has_many :games_owned, :source => :games
+  has_many :games_owned, :class_name => 'Game', :foreign_key => 'owner_id'
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :username, :password, :password_confirmation, :remember_me, :encrypted_password, :authentication_token,
