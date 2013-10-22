@@ -1,8 +1,8 @@
 module GaminpadAuthEntities
   
   class PlayerEntity < Grape::Entity
+    expose :id
     expose :username
-    expose :email
     expose :created_at
   end
   
