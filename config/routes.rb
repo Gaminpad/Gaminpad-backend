@@ -8,7 +8,6 @@ Gaminpad::Application.routes.draw do
   
   constraints :subdomain => /.+/ do
     mount GaminpadCore::APICore => '/api'
-    #mount GaminpadBase::API => '/api'
   end
 
   root :to => 'application#index'
