@@ -8,5 +8,8 @@ class Game < ActiveRecord::Base
   validates :player, :presence => true
   validates :title, :presence => false, :format => /^[0-9a-zA-Z\s_-]{3,}$/, :on => :create
   
+  def joined?(player)
+    self.players.exists?(player)
+  end
   
 end
